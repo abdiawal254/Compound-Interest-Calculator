@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Intrest App</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link href="./site.css" rel="stylesheet" />
+  </head>
+  <body class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar_var">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Comp Cal</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="offcanvas offcanvas-start"
+          tabindex="-1"
+          id="offcanvasExample"
+          aria-labelledby="offcanvasExampleLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+              Offcanvas
+            </h5>
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <div>
+              Some text as placeholder. In real life you can have the elements
+              you have chosen. Like, text, images, lists, etc.
+            </div>
+            <div class="dropdown mt-3">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+              >
+                Dropdown button
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Compound Interest Calculator</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container body-content">
+      <!--Main Content-->
+      <h4>Home</h4>
+      <ul class="nav nav-pills nav-justified">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"
+            >Calculation</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="btnviewreport" href="#table_result"
+            >View Report</a
+          >
+        </li>
+      </ul>
+      <div class="jumbotron mt-3">
+        <h4 class="fw-bold text-center">Compound Interest and Your Return</h4>
+        <div class="form-group">
+          <h6>Your Investment options</h6>
+          <!--invest amount-->
+          <div class="row">
+            <div class="col-md-2">
+              <label>Investment Amount :</label>
+            </div>
+            <div class="col-md-2">
+              <div class="input-group mb-3">
+                <span class="input-group-text">Ksh</span>
+                <input
+                  id="investmentValue"
+                  type="text"
+                  class="form-control form-control-sm"
+                />
+              </div>
+            </div>
+            <div class="col-8">
+              <input
+                id="investmentSlider"
+                list="amounts"
+                type="range"
+                value="1000"
+                min="0"
+                max="1000000"
+                step="1000"
+                class=""
+              />
+              <datalist id="amounts">
+                <option value="0" label="Ksh 0"></option>
+                <option value="100000"></option>
+                <option value="200000"></option>
+                <option value="300000"></option>
+                <option value="400000"></option>
+                <option value="500000" label="Ksh 5M"></option>
+                <option value="600000"></option>
+                <option value="700000"></option>
+                <option value="800000"></option>
+                <option value="900000"></option>
+                <option value="1000000" label="Ksh 10M"></option>
+              </datalist>
+            </div>
+          </div>
+          <!--interest rate-->
+          <div class="row mt-2">
+            <div class="col-md-2">
+              <label>Interest Rate:</label>
+            </div>
+            <div class="col-md-2">
+              <div class="input-group mb-3">
+                <input
+                  id="interestValue"
+                  type="text"
+                  class="form-control form-control-sm"
+                />
+                <span class="input-group-text">%</span>
+              </div>
+            </div>
+            <div class="col-8">
+              <input
+                id="interestSlider"
+                list="interests"
+                type="range"
+                value="0"
+                min="0"
+                max="25"
+                step="1"
+                class=""
+              />
+              <datalist id="interests">
+                <option value="0" label="0%"></option>
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+                <option value="4" label="4%"></option>
+                <option value="5"></option>
+                <option value="6"></option>
+                <option value="7"></option>
+                <option value="8" label="8%"></option>
+                <option value="9"></option>
+                <option value="10"></option>
+                <option value="11"></option>
+                <option value="12" label="12%"></option>
+                <option value="13"></option>
+                <option value="14"></option>
+                <option value="15"></option>
+                <option value="16"></option>
+                <option value="17" label="17%"></option>
+                <option value="18"></option>
+                <option value="19"></option>
+                <option value="20"></option>
+                <option value="21" label="21%"></option>
+                <option value="22"></option>
+                <option value="23"></option>
+                <option value="24"></option>
+                <option value="25" label="25%"></option>
+              </datalist>
+            </div>
+          </div>
+          <!--years-->
+          <div class="row mt-2">
+            <div class="col-md-2">
+              <label>Years :</label>
+            </div>
+            <div class="col-md-2">
+              <div class="input-group mb-3">
+                <input
+                  id="yearValue"
+                  type="text"
+                  class="form-control form-control-sm"
+                />
+                <span class="input-group-text">Years</span>
+              </div>
+            </div>
+            <div class="col-8">
+              <input
+                id="yearSlider"
+                list="amounts"
+                type="range"
+                value="1"
+                min="1"
+                max="50"
+                step="1"
+                class=""
+              />
+              <datalist id="amounts">
+                <option value="1" label="1"></option>
+
+                <option value="17" label="17"></option>
+                <option value="33" label="33"></option>
+                <option value="50" label="50"></option>
+              </datalist>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h5 class="fw-bold text-center">Visualizations of the data</h5>
+      <hr />
+      <div class="jumbotron row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <canvas id="myChart"></canvas>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+
+      <div class="d-flex justify-content-center row">
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item" hidden>
+            <button
+              id="btnCalculate"
+              class="nav-link active"
+              aria-current="page"
+              href="#"
+            >
+              Calculate
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link active" aria-current="page" id="btnprint">
+              Print
+            </button>
+          </li>
+          <li class="nav-item">
+            <button id="btnhideresult" class="nav-link active" type="button">
+              Hide Result
+            </button>
+          </li>
+        </ul>
+      </div>
+      <hr />
+      <div id="table_result">
+        <h5 class="fw-bold text-center">Investment return by year</h5>
+        <table
+          class="table table-sm table-hover border p-2 table-striped"
+          id="final_table"
+        >
+          <thead>
+            <tr class="table-secondary fw-bold">
+              <td>Year</td>
+              <td>Yearly</td>
+              <td>Quaterly</td>
+              <td>Monthly</td>
+              <td>Daily</td>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <hr />
+      <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+      </footer>
+    </div>
+    <!-- Code By PREET-->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
